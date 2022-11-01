@@ -37,7 +37,6 @@ body {
 .screen {
     height: 64px;
     background-color: var(--secondary);
-    color: var(--white);
     border: none;
     border-radius: 12px;
     margin: 12px 12px 0 12px;
@@ -48,26 +47,27 @@ body {
 .screen__input {
     width: 100%;
     text-align: right;
-    padding: 4px 12px;
+    padding: 4px 8px;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+.screen__text:focus-visible,
+.screen__input:focus-visible {
+    outline: none;
 }
 
 .screen__text {
     height: 15px;
+    color: var(--gray);
     font-size: var(--sm);
-    margin: 8px 0;
 }
 
 .screen__input {
     height: 30px;
-    font-size: var(--lg);
-    font-weight: bold;
     color: var(--white);
-    background-color: transparent;
-    border: none;
-}
-
-.screen__input:focus-visible {
-    outline: none;
+    font-size: var(--lg);
 }
 
 .buttons {

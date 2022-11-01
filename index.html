@@ -15,16 +15,16 @@
     <main class="main">
         <div class="wrapper">
             <div class="screen">
-                <p id="text" class="screen__text"></p>
-                <input id="input" class="screen__input" type="number" value="0">
+                <input id="screen-text" class="screen__text" type="text" readonly>
+                <input id="screen-input" class="screen__input" type="text" value="0" readonly>
             </div>
     
             <div id="buttons" class="buttons">
                 <input class="button button-number" type="button" value="7">
                 <input class="button button-number" type="button" value="8">
                 <input class="button button-number" type="button" value="9">
-                <input class="button button-delete" type="button" value="DEL">
-                <input class="button button-delete" type="button" value="AC">
+                <button class="button button-delete">DEL</button>
+                <button class="button button-delete">AC</button>
 
                 <input class="button button-number" type="button" value="4">
                 <input class="button button-number" type="button" value="5">
@@ -35,8 +35,8 @@
                 <input class="button button-number" type="button" value="1">
                 <input class="button button-number" type="button" value="2">
                 <input class="button button-number" type="button" value="3">
-                <input class="button button-operator" type="button" value="-">
                 <input class="button button-operator" type="button" value="+">
+                <input class="button button-operator" type="button" value="-">
 
                 <input class="button button-number" type="button" value="0">
                 <input class="button button-number" type="button" value=".">
