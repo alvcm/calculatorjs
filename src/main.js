@@ -4,6 +4,7 @@ const screenInput = document.getElementById("screen-input");
 const buttons = document.getElementById("buttons");
 const equal = document.getElementById("equal");
 const del = document.getElementById("delete");
+const clear = document.getElementById("clear");
 
 let lastDigit = "0";
 let operation = [];
@@ -91,14 +92,19 @@ function solveOperation(sign) {
 }
 
 del.onclick = deleteNumber;
+clear.onclick = clearScreen;
 
 function deleteNumber() {
-
     if (screenInput.value.length > 1) {
         screenInput.value = screenInput.value.slice(0, -1);
     } else {
         screenInput.value = 0;
     }
+}
+
+function clearScreen() {
+    screenInput.value = 0;
+    screenText.value = "";
 }
 
 //operations
