@@ -3,6 +3,7 @@ const screenInput = document.getElementById("screen-input");
 
 const buttons = document.getElementById("buttons");
 const equal = document.getElementById("equal");
+const del = document.getElementById("delete");
 
 let lastDigit = "0";
 let operation = [];
@@ -86,6 +87,17 @@ function solveOperation(sign) {
                 break;
         }
         solveOperation(sign)
+    }
+}
+
+del.onclick = deleteNumber;
+
+function deleteNumber() {
+
+    if (screenInput.value.length > 1) {
+        screenInput.value = screenInput.value.slice(0, -1);
+    } else {
+        screenInput.value = 0;
     }
 }
 
