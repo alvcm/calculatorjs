@@ -20,24 +20,28 @@ buttons.addEventListener("click", (event) => {
         
         const btnValue = event.target.value;
 
-        if (btnValue.match(/[0-9\.]/)) {
-            if (btnValue.match(/\./) && lastDigit.match(/\./)) {
-                screenInput.value = screenInput.value.replace(/.$/, btnValue);
+        if (btnValue === "." && lastDigit !== "." ) {
+            if (lastDigit.match(/[\+\-\/\*]/)) {
+                screenInput.value = "0."; 
+            } else if(!screenInput.value.includes(".")) {
+                screenInput.value += ".";  
+            }
+        }
+
+        if (btnValue.match(/[0-9]/)) {
+            if (screenInput.value === "0" || lastDigit.match(/[\+\-\/\*]/)) {
+                screenInput.value = btnValue;
             } else {
-                if (screenInput.value == 0 || lastDigit.match(/[\+\-\/\*]/)) {
-                    screenInput.value = btnValue;
-                } else {
-                    screenInput.value += btnValue;  
-                }
+                screenInput.value += btnValue;  
             }
         }
 
         if (btnValue.match(/[\+\-\/\*]/)) {
             if (lastDigit.match(/[\+\-\/\*]/)) {
                 screenText.value = screenText.value.replace(/.$/, btnValue);
-            } else {
-                screenText.value = screenText.value + " " + screenInput.value + " " + btnValue;  
-            }   
+            } else if (!isNaN(screenInput.value)) {
+                screenText.value = screenText.value + " " + screenInput.value + " " + btnValue; 
+            }
         }
 
         lastDigit = event.target.value;
