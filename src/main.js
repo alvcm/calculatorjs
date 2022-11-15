@@ -40,6 +40,9 @@ buttons.addEventListener("click", (event) => {
             if (lastDigit.match(/[\+\-\/\*]/)) {
                 screenText.value = screenText.value.replace(/.$/, btnValue);
             } else if (!isNaN(screenInput.value)) {
+                if (lastDigit === ".") {
+                    screenInput.value = screenInput.value.slice(0, -1);
+                } 
                 screenText.value = screenText.value + " " + screenInput.value + " " + btnValue; 
             }
         }
